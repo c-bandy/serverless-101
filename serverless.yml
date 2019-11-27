@@ -1,13 +1,17 @@
 service:
   name: serverless-101
+
 plugins:
   - serverless-offline
+
 provider:
   name: aws
   region: eu-north-1
   runtime: nodejs12.x
+
 package:
   individually: true
+
 functions:
   hello-world:
     handler: src/hello-world.handler
