@@ -1,0 +1,17 @@
+{
+  "name": "serverless-101",
+  "version": "1.0.0",
+  "description": "A serverless starter!",
+  "private": true,
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "repository": "github:c-bandy/serverless-101",
+  "license": "Unlicense",
+  "author": "Cassidy Bandy",
+  "homepage": "https://github.com/c-bandy/serverless-101#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^1.58.0"
+  }
+}
