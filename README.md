@@ -1,35 +1,30 @@
 # serverless-101 :v:
 
-Welcome to serverless! This repo serves as a short introduction to how to get 
-started with the serverless framework.
+Congrats, you're now on step 2!
 
-## Setup
+Some things have changed:
 
-> We assume you already have [Node.js](https://nodejs.org/) and 
-> [git](https://git-scm.com/) set up on your system.
+* added `serverless-offline` to your `package.json`
+* added a "start" script to your `package.json`
+* added the plugin to `serverless.yml`
+
+This allows us to debug our endpoints offline, so we don't have to wait for a
+deploy every time we change something.
+
+## Try it out
 
 ```bash
-# clone this repo
-git clone https://github.com/c-bandy/serverless-101.git
-
-# install dependencies
+# install the new dependency serverless-offline
 npm install
+
+# run the start script that was added
+npm start
 ```
 
-## Deploy
-
-> In order to deploy you need to have the [AWS CLI](https://aws.amazon.com/cli/) 
-> installed and set up for your AWS account.
-
-```bash
-# deploy to AWS
-npm run deploy
-```
-
-When this process is done you should see a summary, with link to your API.
+And then go to http://localhost:3000/hello-world to try it out.
 
 ## Next step :point_right:
 
 ```bash
-git checkout serverless-offline
+git checkout aws-sdk
 ```

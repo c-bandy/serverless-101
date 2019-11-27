@@ -1,5 +1,7 @@
 service:
   name: serverless-101
+plugins:
+  - serverless-offline
 provider:
   name: aws
   region: eu-north-1
