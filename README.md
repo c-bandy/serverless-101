@@ -26,5 +26,5 @@ And then go to http://localhost:3000/hello-world to try it out.
 ## Next step :point_right:
 
 ```bash
-git checkout aws-sdk
+git checkout s3
 ```
