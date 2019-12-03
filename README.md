@@ -1,30 +1,32 @@
 # serverless-101 :v:
 
-Congrats, you're now on step 2!
+Welcome to step 3!
 
-Some things have changed:
+On this step we will try an integration with Amazon S3.
 
-* added `serverless-offline` to your `package.json`
-* added a "start" script to your `package.json`
-* added the plugin to `serverless.yml`
+* added `aws-sdk` to your `package.json`
+* added a new function called `random-image.js`, defined in `serverless.yml`
+* added resources definition to your `serverless.yml`, which links to 
+`cloudformation-resources.yml`
 
-This allows us to debug our endpoints offline, so we don't have to wait for a
-deploy every time we change something.
+This picks a random image from the S3 bucket and returns it.
 
 ## Try it out
 
 ```bash
-# install the new dependency serverless-offline
+# install the new dependency aws-sdk
 npm install
 
-# run the start script that was added
-npm start
+# deploy to create the s3 bucket and the new function
+npm deploy
 ```
 
-And then go to http://localhost:3000/hello-world to try it out.
+You will get a link to your new endpoint in the output. If you click it you 
+should get an error. This is because our bucket is empty.
 
-## Next step :point_right:
+Upload [cats/cat.jpeg](cats/cat.jpeg) to the S3 bucket that was created. You can do this in the
+AWS console. And then try again!
 
-```bash
-git checkout s3
-```
+As you may notice, the picture you get is not random. It is the cat.jpeg you
+uploaded. Uncomment the code in [src/random-image.js](src/random-image.js) so it picks a random 
+picture. Upload any you like to your S3 bucket!

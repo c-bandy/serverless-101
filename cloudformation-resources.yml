@@ -1,0 +1,12 @@
+Resources:
+  # Define our images S3 bucket
+  ImagesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: our-cool-image-bucket
+
+Outputs:
+  # Output the name of the bucket that is created
+  ImagesBucketName:
+    Value:
+      Ref: ImagesBucket

@@ -14,7 +14,9 @@
   "license": "Unlicense",
   "author": "Cassidy Bandy",
   "homepage": "https://github.com/c-bandy/serverless-101#readme",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.582.0"
+  },
   "devDependencies": {
     "serverless": "^1.58.0",
     "serverless-offline": "^5.12.0"

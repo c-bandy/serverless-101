@@ -8,9 +8,22 @@ provider:
   name: aws
   region: eu-north-1
   runtime: nodejs12.x
+  iamRoleStatements:
+    # give our lambda access to S3
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource:
+        - '*'
+  apiGateway:
+    binaryMediaTypes: # Allow the API to return any file type
+      - '*/*'
 
 package:
   individually: true
+
+# define resources in a separate file
+resources: ${file(cloudformation-resources.yml)}
 
 functions:
   hello-world:
@@ -18,4 +31,11 @@ functions:
     events:
       - http:
           path: hello-world
+          method: GET
+
+  random-image:
+    handler: src/random-image.handler
+    events:
+      - http:
+          path: random-image
           method: GET
